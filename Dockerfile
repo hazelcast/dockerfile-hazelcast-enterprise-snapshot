@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y git
 RUN git clone -b "$SOURCE_BRANCH" --depth 1 https://$GITHUB_TOKEN@github.com/hazelcast/hazelcast-enterprise.git
 RUN mvn -B -f hazelcast-enterprise/pom.xml clean install -DskipTests && \
   rm hazelcast-enterprise/hazelcast-enterprise-all/target/original-*.jar && \
-  rm hazelcast-enterprise/hazelcast-enterprise-all/target/*-sources.jar && \
+  rm hazelcast-enterprise/hazelcast-enterprise-all/target/*-tests.jar && \
   mkdir /app && \
   mv hazelcast-enterprise/hazelcast-enterprise-all/target/hazelcast-enterprise-all-*.jar /app/hazelcast-enterprise-all.jar
 
