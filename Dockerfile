@@ -1,5 +1,5 @@
 FROM gcr.io/distroless/java:11
-COPY hazelcast-enterprise-all.jar /opt/hazelcast/
+COPY hazelcast-enterprise.jar /opt/hazelcast/
 WORKDIR /opt/hazelcast
 ENTRYPOINT ["/usr/bin/java", \
   "--add-modules", "java.se", \
@@ -10,4 +10,4 @@ ENTRYPOINT ["/usr/bin/java", \
   "--add-opens", "java.management/sun.management=ALL-UNNAMED", \
   "--add-opens", "jdk.management/com.sun.management.internal=ALL-UNNAMED" ]
 
-CMD ["-jar", "hazelcast-enterprise-all.jar"]
+CMD ["-jar", "hazelcast-enterprise.jar"]
